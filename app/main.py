@@ -1,14 +1,13 @@
 import logging
 import uvicorn
 from fastapi import FastAPI
-from app.api import ping, generate
+from app.api import generate
 
 
 log = logging.getLogger(__name__)
 
 def create_application() -> FastAPI:
     application = FastAPI()
-    application.include_router(ping.router)
     application.include_router(
         generate.router, prefix='/generate', tags=['generate']
     )

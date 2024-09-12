@@ -4,5 +4,5 @@ class GeneratePayloadSchema(BaseModel):
     question: str
 
 
-class SummaryResponseSchema(BaseModel):
+class GenerateResponseSchema(BaseModel):
     text: str
