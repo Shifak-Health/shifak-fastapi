@@ -1,6 +1,6 @@
 import os
 import torch
-from transformers import  GPT2Tokenizer, GPT2Config, GPT2LMHeadModel
+from transformers import GPT2Tokenizer, GPT2Config, GPT2LMHeadModel
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
@@ -18,9 +18,11 @@ def answer_question(question: str) -> str:
     sample_outputs = model.generate(
         generated,
         do_sample=True,
-        top_k=2,
-        max_length = 300,
-        top_p=0.9,
+        top_k=50,
+        max_length=300,
+        min_length=120,
+        top_p=0.95,
+        temperature=0.7,
         num_return_sequences=3
     )
     return tokenizer.decode(sample_outputs[0], skip_special_tokens=True)
