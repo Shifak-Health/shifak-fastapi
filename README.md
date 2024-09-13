@@ -14,12 +14,22 @@ into production.
 
 This API implements the following routes:
 
-| **Endpoint**     	| **HTTP method**   | **CRUD method** 	| **Description**      	|
-|-----------------	|----------------  	|---------------	|----------------------	|
-| `/generate`     	| POST           	| INSERT        	| Generate response     |
+| **Endpoint**     	| **HTTP method**   | **Description**      	|
+|-----------------	|----------------  	|----------------------	|
+| `/generate`     	| POST           	| Generate response     |
 
 ## Build the API image
 
 ```bash
 docker compose up
 ```
+
+## Usage
+
+1. Download the pretrained model [Google Drive](https://drive.google.com/file/d/1bJ2ed_Me02ORAkIfQRIK1oAruemztCYe/view?usp=sharing)
+
+2. Place it in `pretrained_model` folder
+
+3. Unzip it
+
+4. Hit `/generate` API !
